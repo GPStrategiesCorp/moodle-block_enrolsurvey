@@ -125,7 +125,7 @@ if ($surveyform->is_cancelled()) {
                 if ($DB->record_exists('user_info_data', array('userid' => $USER->id, 'fieldid' => $id))) {
                     $DB->set_field('user_info_data', 'data', $fd, array('userid' => $USER->id, 'fieldid' => $id));
                 } else {
-                    $dataobj = new object();
+                    $dataobj = new stdClass();
                     $dataobj->userid = $USER->id;
                     $dataobj->fieldid = $id;
                     $dataobj->data = $fd;
@@ -150,7 +150,7 @@ if ($surveyform->is_cancelled()) {
     }
 
     if (!is_survey_taken($USER->id, $instanceid) && empty($incomplete)) {
-        $dataobject = new object();
+        $dataobject = new stdClass();
         $dataobject->blockinstanceid = $instanceid;
         $dataobject->userid = $USER->id;
         $DB->insert_record('block_enrolsurvey_taken', $dataobject);

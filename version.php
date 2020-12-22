@@ -30,5 +30,5 @@ $plugin->release = '3.1.6.1 (Build: 20170814)';
 $plugin->component = 'block_enrolsurvey';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
-    'local_elisprogram' => 2016052300
+    'local_elisprogram' => 2020122200
 );
